@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shantiyogdham.com/sitemap.xml
+Sitemap: https://www.shantiyogdham.com/sitemap.xml
+
+# Block access to admin and private directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /includes/
+
+# Allow access to important files
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.gif$

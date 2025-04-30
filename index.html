@@ -485,38 +485,42 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="appointment">
-              <h2 class="appointment-title">Make An Appiontment</h2>
-              <p class="appointment-desc">At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.</p>
-               <form action="#" class="appointment-form">
+              <h2 class="appointment-title">Make An Appointment</h2>
+              <p class="appointment-desc">Fill out the form below to book your yoga class at Shanti Yog Dham, Haldwani.</p>
+               <form id="appointmentForm" class="appointment-form" action="mailto:info@shantiyogdham.com" method="post" enctype="text/plain">
                   <div class="row">
                     <div class="col-lg-6 appointment-form-col-left">                              
-                      <input type="text" class="form-control appointment-form-input" placeholder="First name*" required="">
+                      <input type="text" class="form-control appointment-form-input" name="firstName" placeholder="First name*" required>
                     </div>
                     <div class="col-lg-6 appointment-form-col-right">                              
-                      <input type="text" class="form-control appointment-form-input" placeholder="Last name*" required="">
+                      <input type="text" class="form-control appointment-form-input" name="lastName" placeholder="Last name*" required>
                     </div>
                     <div class="col-lg-6 appointment-form-col-left">
-                      <input type="date" class="form-control appointment-form-input data-input" required="">
+                      <input type="date" class="form-control appointment-form-input data-input" name="date" required>
                     </div>
                     <div class="col-lg-6 box-select appointment-form-col-right">
-                      <select name="gender" class="form-control appointment-form-input" >
-                        <option value="choose-class">Choose Class</option>
-                        <option value="class-1">Class 1</option>
-                        <option value="class-2">Class 2</option>
-                        <option value="class-3">Class 3</option>
+                      <select name="class" class="form-control appointment-form-input" required>
+                        <option value="">Choose Class</option>
+                        <option value="beginner-yoga">Beginner Yoga</option>
+                        <option value="advanced-yoga">Advanced Yoga</option>
+                        <option value="meditation">Meditation</option>
+                        <option value="kundalini-yoga">Other</option>
                       </select>
                      </div>
                     <div class="col-lg-6 appointment-form-col-left">
-                      <input type="tel" class="form-control appointment-form-input" placeholder="Phone" required="" value="" size="10" maxlength="10">
+                      <input type="tel" class="form-control appointment-form-input" name="phone" placeholder="Phone*" required pattern="[0-9]{10}">
                     </div>
                     <div class="col-lg-6 appointment-form-col-right">
-                      <input type="email" class="form-control appointment-form-input" placeholder="Email" required="">
+                      <input type="email" class="form-control appointment-form-input" name="email" placeholder="Email*" required>
                     </div>
                     <div class="col-12 appointment-form-col-left">
-                      <textarea class="form-control appointment-form-text" id="exampleFormControlTextarea1" rows="3" placeholder="Message (Optional)"></textarea>
+                      <textarea class="form-control appointment-form-text" name="message" rows="3" placeholder="Message (Optional)"></textarea>
                     </div>
                     <div class="col-12 appointment-form-col-right">
-                      <button type="submit"  class="appointment-form-btn"  value="">Book An Appointment</button>                              
+                      <button type="submit" class="appointment-form-btn">Book An Appointment</button>
+                    </div>
+                    <div class="col-12">
+                      <div id="formMessage" class="alert" style="display: none;"></div>
                     </div>
                   </div>
                </form>
